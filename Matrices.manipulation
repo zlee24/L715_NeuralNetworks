@@ -1,0 +1,181 @@
+#missed beginning of course
+# """ Question 1: Print out a matrix """
+
+# #Option A:
+
+# def matrix_zeros(rows, cols):
+    
+#     m = []
+    
+#     for i in range(rows):
+       
+#         m.append([])
+        
+#         for j in range(cols):
+            
+#             m[i].append(0)
+   
+#     return(m)
+
+# print(matrix_zeros(4, 2))
+
+
+# # #CL Seminar coding notes Foundations of Statisical NLP
+# # def matrix_zeros(a,b):
+# #     return[[0]*b]*a
+# # print(matrix_zeros)
+# # m = matrix_zeros(3,2)
+# # m[0][0]
+# # print(m)
+
+# # # def copy_matrix(mat):
+# # #     ret = []
+# # #     for row in mat:
+# # #         cur = []
+# # #         for col in row:
+# # #             cur.append(col)
+
+# # # A = [[1,4],[2,1]]
+# # # print_matrix(A)
+
+
+# # #For the shape matrix / boundaries (to predetermine space necessary)
+# # def shape(A):
+# #     shape = []
+# #     shape.append(len(A))
+    
+# #     while(type(A))== type([]):
+# #         shape.append(len(A))
+# #         A = A[0] 
+# #     return(shape)
+
+
+
+# #Matts option for copy 
+# # def print_matrix(mat):
+# #     if any(isinstance(elem,int) for elem in mat):
+# #         print(mat)
+    
+# #     else:
+# #         print('[', end = '')
+# #         for i,row in enumerate(mat):
+# #             if i != 0:
+# #                 print(' ', end = '')
+# #             print('[', end = '')
+
+# #             for j, col, in enumerate(row):
+# #                 print(col, end = '')
+# #                 if j != (len(row) - 1):
+# #                     print(', ', end = '')
+# #                 else:
+# #                     print(']', end = '')
+            
+# #             if i != (len(mat) - 1):
+# #                 print(',')
+# #     print(']')
+
+
+# #Addition and Subtraction 
+# # def matrix_add(matrix1, matrix2):
+# #     result = matrix_zeros(len(matrix1), len(matrix1[0]))
+# #     for i in range(len(matrix1)):
+# #         for j in range(len(matrix1[0])):
+# #             result[i][j] = matrix1[i][j] + matrix2[i][j]
+# #     return result
+
+# # A = [[1,1],
+# #     [1,1]]
+
+# # B = [[1,1],
+# #    [1,1]]
+
+# #print(matrix_add(A,B))
+
+# def matrix_mult(A,B):
+#     #iterate through rows
+#     for i in range(len(A)):
+#         for j in range(len(B[0])):
+#             #i has result here 
+
+#             for k in range(len(B)):
+#                 result[i][j] += A[i][k] * B[k][j]
+
+#     return result
+
+# A= [[1,4,3],
+#     [2,1,5]]
+
+# B= [[6,4],
+#     [4,8],
+#     [3,5]]
+# result = [[0,0],
+#         [0,0]]
+
+# print(matrix_mult(A,B))
+
+# #transposition
+# def matrix_trans(A):
+
+#     result = []
+#     col = 0
+#     #iterate through row
+#     for i in range(len(A[0])):
+#         row = []
+#         for j in range.append(A[j][i]):
+#             result.append(row)
+#         return result
+
+# print(matrix_trans(B))
+
+# def flatten_matrix: #From Daniel 
+
+# need to finish the above, it is in chat 
+def flatten_matrix:
+ret = []
+for row in matrix:
+    ret += row
+return ret
+
+#Below we begin to implement the perceptron 
+# First Try 
+import sys
+import numpy as np
+def step_funct(W,):
+    if W * vector > 0:
+        return (1)
+    else:
+        return (0)
+    
+
+def matrix_concat(A, B):
+
+    if len(A) != len(B):
+       raise ValueError('Cannot concatonate arrays with different number of rows.') 
+
+    C = matrix_zeros(len(A), len(A[0]) + len(B[0]))
+    for i, row in enumerate(A):
+        for j, num in enumerate(row):
+            C[i][j] = num
+    for i, row in enumerate(A):
+        for j, num in enumerate(row):
+            C[i][j + len(A[0])] = num
+    return C 
+
+
+#from Natasha
+
+# def concatenate(A, B, type_):
+#     row_a, col_a = get_shape(A)
+#     row_b, col_b = get_shape(B)
+    
+#     concat_matrix = []
+#     if type_.lower()=='Horizontal':
+#         if (row_a!=row_b):
+#             raise Exception('Number of rows in matrix A does not match number of rows in matrix B')
+        
+#         for row in row_a:
+#             concat_matrix.append(A[row]+B[row])
+#     else:
+#         A_T = transpose_matrix(A)
+#         B_T = transpose_matrix(B)
+    
